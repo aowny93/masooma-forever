@@ -73,6 +73,46 @@ function loadGallery() {
     "https://raw.githubusercontent.com/aowny93/masooma-forever/main/24.jpeg",
     "https://raw.githubusercontent.com/aowny93/masooma-forever/main/25.jpeg"
   ];
+  function loadGallery() {
+  const gallery = document.querySelector(".gallery");
+
+  const imageUrls = [
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/1.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/2.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/3.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/4.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/5.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/6.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/7.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/8.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/9.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/10.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/11.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/12.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/13.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/14.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/15.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/16.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/17.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/18.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/19.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/20.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/21.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/22.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/23.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/24.jpeg",
+    "https://raw.githubusercontent.com/aowny93/masooma-forever/main/25.jpeg"
+  ];
+
+  imageUrls.forEach((url, i) => {
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = "Masooma's photo";
+    gallery.appendChild(img);
+    setTimeout(() => img.classList.add("show"), i * 200);
+  });
+}
+
 
   imageFiles.forEach((url, i) => {
     const img = document.createElement("img");

@@ -23,6 +23,7 @@ function beginFilm() {
   music.volume = 0;
   music.play();
 
+  // Smooth music fade-in
   let fade = setInterval(() => {
     if (music.volume < 1) music.volume += 0.01;
     else clearInterval(fade);
@@ -32,6 +33,7 @@ function beginFilm() {
   loadGallery();
 }
 
+// Typing cinematic text
 function typeLines() {
   if (lineIndex < scriptLines.length) {
     const p = document.createElement("p");
@@ -40,69 +42,48 @@ function typeLines() {
     lineIndex++;
     setTimeout(typeLines, 1200);
   }
-  function loadGallery() {
-  const gallery = document.querySelector(".gallery");
-
-  // List all image filenames exactly as uploaded
-  const imageFiles = [
-    "1.jpeg",
-    "2.jpeg",
-    "3.jpeg",
-    "4.jpeg",
-    "5.jpeg",
-    "6.jpeg",
-    "7.jpeg",
-    "8.jpeg",
-    "9.jpeg",
-    "10.jpeg",
-    "11.jpeg",
-    "12.jpeg",
-    "13.jpeg",
-    "14.jpeg",
-    "15.jpeg",
-    "16.jpeg",
-    "17.jpeg",
-    "18.jpeg",
-    "19.jpeg",
-    "20.jpeg",
-    "21.jpeg",
-    "22.jpeg",
-    "23.jpeg",
-    "24.jpeg",
-    "25.jpeg"
-  ];
-
-  imageFiles.forEach((file, i) => {
-    const img = document.createElement("img");
-    img.src = `images/${file}`;
-    gallery.appendChild(img);
-
-    setTimeout(() => img.classList.add("show"), i * 200);
-  });
 }
 
-} function loadGallery() {
+// Load images individually (no folder needed)
+function loadGallery() {
   const gallery = document.querySelector(".gallery");
 
-  // Load 25 images with .jpeg extension
-  for (let i = 1; i <= 25; i++) {
+  // List all 25 image filenames exactly as uploaded on GitHub
+  const imageFiles = [
+    "IMG1.jpeg",
+    "IMG2.jpeg",
+    "IMG3.jpeg",
+    "IMG4.jpeg",
+    "IMG5.jpeg",
+    "IMG6.jpeg",
+    "IMG7.jpeg",
+    "IMG8.jpeg",
+    "IMG9.jpeg",
+    "IMG10.jpeg",
+    "IMG11.jpeg",
+    "IMG12.jpeg",
+    "IMG13.jpeg",
+    "IMG14.jpeg",
+    "IMG15.jpeg",
+    "IMG16.jpeg",
+    "IMG17.jpeg",
+    "IMG18.jpeg",
+    "IMG19.jpeg",
+    "IMG20.jpeg",
+    "IMG21.jpeg",
+    "IMG22.jpeg",
+    "IMG23.jpeg",
+    "IMG24.jpeg",
+    "IMG25.jpeg"
+  ];
+
+  // Add each image to the gallery with fade-in
+  imageFiles.forEach((file, i) => {
     const img = document.createElement("img");
-    img.src = `images/${i}.jpeg`;  // matches your uploaded files
+    img.src = file; // root-level images
     gallery.appendChild(img);
 
     // Fade-in effect
     setTimeout(() => img.classList.add("show"), i * 200);
-  }
-}
-
-
-function loadGallery() {
-  const gallery = document.querySelector(".gallery");
-  for (let i = 1; i <= 25; i++) {
-    const img = document.createElement("img");
-    img.src = `images/${i}.jpg`;
-    gallery.appendChild(img);
-
-    setTimeout(() => img.classList.add("show"), i * 200);
-  }
+  });
 }

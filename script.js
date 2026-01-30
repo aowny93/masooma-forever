@@ -44,46 +44,17 @@ function typeLines() {
   }
 }
 
-// Load images individually (no folder needed)
+// Load 25 images named 1.jpeg → 25.jpeg from root
 function loadGallery() {
   const gallery = document.querySelector(".gallery");
 
-  // List all 25 image filenames exactly as uploaded on GitHub
-  const imageFiles = [
-    "IMG1.jpeg",
-    "IMG2.jpeg",
-    "IMG3.jpeg",
-    "IMG4.jpeg",
-    "IMG5.jpeg",
-    "IMG6.jpeg",
-    "IMG7.jpeg",
-    "IMG8.jpeg",
-    "IMG9.jpeg",
-    "IMG10.jpeg",
-    "IMG11.jpeg",
-    "IMG12.jpeg",
-    "IMG13.jpeg",
-    "IMG14.jpeg",
-    "IMG15.jpeg",
-    "IMG16.jpeg",
-    "IMG17.jpeg",
-    "IMG18.jpeg",
-    "IMG19.jpeg",
-    "IMG20.jpeg",
-    "IMG21.jpeg",
-    "IMG22.jpeg",
-    "IMG23.jpeg",
-    "IMG24.jpeg",
-    "IMG25.jpeg"
-  ];
-
-  // Add each image to the gallery with fade-in
-  imageFiles.forEach((file, i) => {
+  for (let i = 1; i <= 25; i++) {
     const img = document.createElement("img");
-    img.src = file; // root-level images
+    img.src = `${i}.jpeg`; // root-level images
+    img.alt = "Masooma's photo";
     gallery.appendChild(img);
 
     // Fade-in effect
     setTimeout(() => img.classList.add("show"), i * 200);
-  });
+  }
 }

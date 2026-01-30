@@ -40,7 +40,20 @@ function typeLines() {
     lineIndex++;
     setTimeout(typeLines, 1200);
   }
+} function loadGallery() {
+  const gallery = document.querySelector(".gallery");
+
+  // Load 25 images with .jpeg extension
+  for (let i = 1; i <= 25; i++) {
+    const img = document.createElement("img");
+    img.src = `images/${i}.jpeg`;  // matches your uploaded files
+    gallery.appendChild(img);
+
+    // Fade-in effect
+    setTimeout(() => img.classList.add("show"), i * 200);
+  }
 }
+
 
 function loadGallery() {
   const gallery = document.querySelector(".gallery");

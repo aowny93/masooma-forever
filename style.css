@@ -1,74 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+/* =========================
+   Global Styles
+========================= */
 body {
   margin: 0;
-  background: linear-gradient(
-    to bottom right,
-    #f3a0b5,
-    #e87aa4,
-    #d65c92
-  ); /* darker pink gradient */
-  color: #4a0f2b; /* dark rose text */
   font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom right, #ffe6f0, #ffb6c1, #ff69b4);
+  color: #fffaf0;
   overflow-x: hidden;
 }
 
+/* Subtle grain overlay */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.05;
+  opacity: 0.06;
   pointer-events: none;
   z-index: 999;
 }
 
-/* Soft light effect */
+/* =========================
+   Cinematic Effects
+========================= */
 .light-leak {
   position: fixed;
   top: -20%;
   left: -20%;
   width: 140%;
   height: 140%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 60%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12),
+    transparent 60%
+  );
   animation: drift 20s linear infinite;
   pointer-events: none;
   z-index: 1;
 }
 
 @keyframes drift {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(10%,5%); }
-  100% { transform: translate(0,0); }
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(10%, 5%); }
+  100% { transform: translate(0, 0); }
 }
 
+/* =========================
+   Layout Sections
+========================= */
 .scene {
   min-height: 100vh;
-  padding: 80px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.opening { cursor: pointer; }
-
-.fade-text {
-  opacity: 0;
-  animation: fadeIn 3s forwards;
-}
-
-.delay { animation-delay: 2s; }
-.delay-2 { animation-delay: 4s; }
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* Main title */
-.title {
-  font-size: 4rem;
-  letter-spacing: 5px;
-  margin-top: 20px;
-  color: #5c1236; /* deep romantic text */
-  t
+  padd

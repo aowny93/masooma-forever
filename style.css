@@ -2,8 +2,8 @@
 
 body {
   margin: 0;
-  background: linear-gradient(to bottom right, #ffe6f0, #ffb6c1, #ff69b4); /* bright romantic gradient */
-  color: #fff0f5;
+  background: linear-gradient(to bottom right, #ffe6f0, #ffb6c1, #ff69b4);
+  color: #4a001f; /* dark reddish for contrast */
   font-family: 'Playfair Display', serif;
   overflow-x: hidden;
 }
@@ -13,7 +13,7 @@ body::after {
   position: fixed;
   inset: 0;
   background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.08; /* slightly lighter noise */
+  opacity: 0.08;
   pointer-events: none;
   z-index: 999;
 }
@@ -61,11 +61,14 @@ body::after {
   font-size: 4rem;
   letter-spacing: 5px;
   margin-top: 20px;
+  color: #4a001f; /* dark pinkish text */
+  text-shadow: 2px 2px 6px #fff0; /* subtle shadow for readability */
 }
 
 .hint {
-  opacity: 0.4;
+  opacity: 0.6;
   margin-top: 50px;
+  color: #4a001f;
 }
 
 .love-letter div p {
@@ -73,6 +76,7 @@ body::after {
   line-height: 2;
   margin: 20px auto;
   max-width: 700px;
+  color: #4a001f;
 }
 
 /* Gallery */
@@ -89,7 +93,7 @@ body::after {
   filter: blur(10px);
   transition: all 1.5s ease;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255,182,193,0.4); /* soft glow */
+  box-shadow: 0 0 20px rgba(255,182,193,0.4);
 }
 
 .gallery img.show {
@@ -104,29 +108,8 @@ body::after {
   font-size: 1.5rem;
   line-height: 2.2;
   font-style: italic;
-  color: #ffd1dc; /* lighter pink text */
+  color: #4a001f; /* dark pink for readability */
 }
 
 .ending h3 {
-  margin-top: 40px;
-  color: #ffb6c1;
-}
-
-/* Heartbeat effect */
-.heartbeat {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  animation: beat 1.2s infinite;
-  opacity: 0.7;
-}
-
-@keyframes beat {
-  0% { transform: translateX(-50%) scale(1); }
-  25% { transform: translateX(-50%) scale(1.2); }
-  40% { transform: translateX(-50%) scale(1); }
-}
-
-.hidden { display: none; }
+  margin-to
